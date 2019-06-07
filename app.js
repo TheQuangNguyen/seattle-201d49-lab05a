@@ -81,10 +81,7 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-  var arraySum = 0;
-  for (var i = 0; i < sumArr.length; i++) { 
-    arraySum = sum(arraySum,sumArr[i])[0];
-  }
+  var arraySum = sum(sumArr[0], sum(sumArr[1],sumArr[2])[0])[0];
   return [arraySum, sumArr[0] + "," + sumArr[1] + "," + sumArr[2] + " was passed in as an array of numbers, and " + arraySum + " is their sum."];
 }
 
@@ -138,10 +135,19 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+  var anyArrayProduct = 1;
+  for (var i = 0; i < dynamicArray.length; i++) { 
+    anyArrayProduct = multiply(anyArrayProduct,dynamicArray[i])[0];
+  } 
+  var string = "The numbers ";
+  for (var j = 0; j < dynamicArray.length - 1; j++) { 
+    string += dynamicArray[j] + ",";
+  }
+  string += dynamicArray[dynamicArray.length-1] + " have a product of ";
+  return [anyArrayProduct, string + anyArrayProduct + "."];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+  testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.

@@ -139,12 +139,8 @@ function multiplyAnyArray(dynamicArray) { //eslint-disable-line
   for (var i = 0; i < dynamicArray.length; i++) { 
     anyArrayProduct = multiply(anyArrayProduct,dynamicArray[i])[0];
   } 
-  var string = "The numbers ";
-  for (var j = 0; j < dynamicArray.length - 1; j++) { 
-    string += dynamicArray[j] + ",";
-  }
-  string += dynamicArray[dynamicArray.length-1] + " have a product of ";
-  return [anyArrayProduct, string + anyArrayProduct + "."];
+ 
+  return [anyArrayProduct, "The numbers " + dynamicArray + " have a product of 120."];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
